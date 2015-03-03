@@ -3,12 +3,12 @@ TEMP_FOLDER="/aerospike-tmp"
 CONFIG_FOLDER="/aerospike-tmp"
 
 echo "Setting-up ..."
+rm -r $TEMP_FOLDER
 mkdir $TEMP_FOLDER
-cd $TEMP_FOLDER
 clear
 
 echo "Install Aerospike ..."
-
+cd $TEMP_FOLDER
 sudo apt-get -y update
 sudo wget -O aerospike-server.tgz http://www.aerospike.com/download/server/latest/artifact/debian7
 sudo tar -zxvf aerospike-server.tgz
