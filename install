@@ -9,7 +9,7 @@ echo "Install Aerospike ..."
 
 sudo apt-get -y update
 sudo wget -O aerospike-server.tgz http://www.aerospike.com/download/server/latest/artifact/debian7
-sudo tar -zxvf aerosopike-server.tgz
+sudo tar -zxvf aerospike-server.tgz
 cd aerospike-server-community-*
 sudo ./asinstall
 clear
