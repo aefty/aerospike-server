@@ -1,0 +1,19 @@
+#!/bin/bash
+FOLDER="aerospike-tmp"
+
+
+echo "Setting-up ..."
+mkdir $FOLDER
+cd $FOLDER
+clear
+
+
+echo "Install Config File"
+#rm -r /etc/aerospike/*
+sed "s/$OLD/$NEW/g" "$f" > $TFILE && mv $TFILE "$f"
+cp /$FOLDER/cluster_config/* 
+
+
+echo "Starting Services ..."
+sudo service aerospike start
+sudo service amc start

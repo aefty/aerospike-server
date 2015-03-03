@@ -1,8 +1,10 @@
 #!/bin/bash
+TEMP_FOLDER="/aerospike-tmp"
+CONFIG_FOLDER="/aerospike-tmp"
+
 echo "Setting-up ..."
-cd /
-mkdir aerospike
-cd /aerospike
+mkdir $TEMP_FOLDER
+cd $TEMP_FOLDER
 clear
 
 echo "Install Aerospike ..."
@@ -19,6 +21,10 @@ sudo wget -O aerospike-management-console.deb http://www.aerospike.com/download/
 sudo dpkg -i aerospike-management-console.deb
 sudo apt-get -y -f install
 clear
+
+echo "Install Config File"
+sudo rm -r $CONFIG_FOLDER/*
+sudo cp $TEMP_FOLDER/cluster_config/* $CONFIG_FOLDER
 
 echo "Starting Services ..."
 sudo service aerospike start
